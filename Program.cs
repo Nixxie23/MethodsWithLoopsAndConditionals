@@ -42,6 +42,24 @@ namespace MethodsWithLoopsAndConditionals
             return a; 
             return b;
                 }
+        public static int AreTheyEqual()
+        {
+            Console.WriteLine("Please type a number.");
+            int a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Please type a second number.");
+            int b = int.Parse(Console.ReadLine());
+
+            if (a == b)
+            {
+                Console.WriteLine($"{a} equals {b}");
+            }
+            else
+            {
+                Console.WriteLine($"{a} does not equal {b}");
+            }
+            return a;
+            return b;
+        }
         public static int EvenOrOdd(int num)
         {
             if (num%2 == 0) 
@@ -50,6 +68,20 @@ namespace MethodsWithLoopsAndConditionals
                     }
             else
             { Console.WriteLine($"{num} is odd.");
+            }
+            return num;
+        }
+        public static int EvenOrOdd()
+        {
+            Console.WriteLine("Please type a number to see if it is even or odd.");
+            int num = int.Parse(Console.ReadLine());
+            if (num % 2 == 0)
+            {
+                Console.WriteLine($"{num} is even.");
+            }
+            else
+            {
+                Console.WriteLine($"{num} is odd.");
             }
             return num;
         }
@@ -70,9 +102,27 @@ namespace MethodsWithLoopsAndConditionals
             }
             return c; 
         }
+        public static int PosOrNeg()
+        {
+            Console.WriteLine("Please type a number to see if it is positive or negative.");
+            int c = int.Parse(Console.ReadLine());
+            if (c > 0)
+            {
+                Console.WriteLine($"{c} is positive.");
+            }
+            else if (c < 0)
+            {
+                Console.WriteLine($"{c} is negative.");
+            }
+            else if (c == 0)
+            {
+                Console.WriteLine($"{c} is not positive or negative.");
+            }
+            return c;
+        }
         public static int CanTheyVote(int voterAge)
-        {                                                   
-                   //originally i wanted console input for this one instead of getting the number from the parameter. Would that have been incorrect in the scope of this exercise? I tried to make it take either or but failed  
+        {                                             
+             
             if (voterAge >= 18)
             { 
                 Console.WriteLine($"Do your civic duty my friend! {voterAge} is old enough to vote!");
@@ -84,8 +134,38 @@ namespace MethodsWithLoopsAndConditionals
             }
             return voterAge;
         }
+        public static int CanTheyVote()
+        {
+            Console.WriteLine("How old are you?");
+            int voterAge = int.Parse(Console.ReadLine());
+            if (voterAge >= 18)
+            {
+                Console.WriteLine($"Do your civic duty my friend! {voterAge} is old enough to vote!");
+            }
+            else
+            {
+                Console.WriteLine($"You are not old enough! {18 - voterAge} years to go!");
+
+            }
+            return voterAge;
+        }
         public static int TensRange(int num)
         {
+            if (num <= 10 && num >= -10)
+            {
+                Console.WriteLine($"{num} is in the range of -10 and 10.");
+            }
+            else
+            {
+                Console.WriteLine($"{num} is outside the range of -10 and 10.");
+
+            }
+            return num;
+        }
+        public static int TensRange()
+        {
+            Console.WriteLine("Please type a number to see if it is in the range of -10 and 10.");
+                int num = int.Parse(Console.ReadLine());
             if (num <= 10 && num >= -10)
             {
                 Console.WriteLine($"{num} is in the range of -10 and 10.");
@@ -113,7 +193,25 @@ namespace MethodsWithLoopsAndConditionals
             Console.WriteLine($"12 * {num} = {12 * num}");
             return num;
         }
-            static void Main(string[] args) 
+        public static int MultiplicationTableTo12()
+        {
+            Console.WriteLine("Please type a number to see the multiplication table up to 12.");
+                int num = int.Parse(Console.ReadLine());
+            Console.WriteLine($"1 * {num} = {1 * num}");
+            Console.WriteLine($"2 * {num} = {2 * num}");
+            Console.WriteLine($"3 * {num} = {3 * num}");
+            Console.WriteLine($"4 * {num} = {4 * num}");
+            Console.WriteLine($"5 * {num} = {5 * num}");
+            Console.WriteLine($"6 * {num} = {6 * num}");
+            Console.WriteLine($"7 * {num} = {7 * num}");
+            Console.WriteLine($"8 * {num} = {8 * num}");
+            Console.WriteLine($"9 * {num} = {9 * num}");
+            Console.WriteLine($"10 * {num} = {10 * num}");
+            Console.WriteLine($"11 * {num} = {11 * num}");
+            Console.WriteLine($"12 * {num} = {12 * num}");
+            return num;
+        }
+        static void Main(string[] args) 
         {
             PrintRangePosNegThousand();
             ThreeToNineHundred();
@@ -131,6 +229,13 @@ namespace MethodsWithLoopsAndConditionals
             TensRange(0);
             MultiplicationTableTo12(5);
             MultiplicationTableTo12(1);
+            AreTheyEqual();
+            EvenOrOdd();
+            PosOrNeg();
+            CanTheyVote();
+            TensRange();
+            MultiplicationTableTo12();
+
         }
 
 
